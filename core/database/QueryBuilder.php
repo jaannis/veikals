@@ -4,11 +4,12 @@
 class QueryBuilder
 {
     protected $pdo;
-   
+
     public function __construct($pdo)
     {
         $this->pdo = $pdo;
     }
+
     //gets files from database and shows in product page
     public function selectAll($table)
     {
@@ -17,7 +18,6 @@ class QueryBuilder
 
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
-
 
     //deletes files from database
     public function delete($table, $parameters)
